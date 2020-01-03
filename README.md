@@ -9,11 +9,25 @@ $ sudo apt install openjdk-11-jdk
 
 ## Install maven  ##
 
-apt install maven
 
 Very good artical which help me to install java and maven on ubunut 16.04 is listed here
 ```
-https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+ cd /opt/
+ wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+ sudo tar -zxvf apache-maven-3.5.4-bin.tar.gz
+ sudo mv apache-maven-3.5.4 maven 
+ 
+ sudo vi /etc/profile.d/mavenenv.sh
+ 
+ export M2_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
+
+
+sudo chmod +x /etc/profile.d/mavenenv.sh
+sudo source /etc/profile.d/mavenenv.sh
+
+mvn --version
+
 https://www.mkyong.com/java/how-to-install-java-jdk-on-ubuntu-linux/
 ```
 # Install Jenkins on ubuntu 16.04 #
