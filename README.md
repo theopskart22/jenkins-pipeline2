@@ -1,6 +1,6 @@
 # jenkins-pipeline2
 
-## Install java on ubuntu 16.04  
+## Install java on ubuntu 16.04  & 18.04
 
 
 $ sudo apt install openjdk-8-jdk
