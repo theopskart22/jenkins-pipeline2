@@ -13,9 +13,9 @@ $ sudo apt install openjdk-11-jdk
 Very good artical which help me to install java and maven on ubunut 16.04 is listed here
 ```
  cd /opt/
- wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
- sudo tar -zxvf apache-maven-3.5.4-bin.tar.gz
- sudo mv apache-maven-3.5.4 maven 
+ wget https://downloads.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.tar.gz
+ sudo tar -zxvf apache-maven-3.8.7-bin.tar.gz
+ sudo mv apache-maven-3.8.7 maven 
  
  sudo vi /etc/profile.d/mavenenv.sh
  
