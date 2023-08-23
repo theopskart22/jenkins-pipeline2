@@ -8,8 +8,7 @@ pipeline {
                 script {
                     sh '''
 		     java -version
-                     echo "PATH = ${PATH}"
-		     echo "MAVEN_HOME = ${MAVEN_HOME}"
+                     eexport MAVEN_HOME=/opt/maven && export PATH=$PATH:$MAVEN_HOME/bin"
 		    '''
                 }
             }
