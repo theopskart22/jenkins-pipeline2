@@ -7,15 +7,8 @@ pipeline {
             steps {
                 script {
                     sh "java -version"
+		    sh "export MAVEN_HOME=/opt/maven && export PATH=$PATH:$MAVEN_HOME/bin"
 
-                }
-            }
-        }
-		
-		stage("Checkout from SCM"){
-            steps {
-                script {
-                    sh "git clone https://github.com/techmartguru/jenkins-pipeline2.git"				
                 }
             }
         }
@@ -23,16 +16,16 @@ pipeline {
         stage('Build ') {
             steps {
             script {
-                sh "cd ${WORKSPACE}/jenkins-pipeline2 "
-                sh "cd jenkins-pipeline2 && mvn clean install "
+                sh "cd ${WORKSPACE}"
+                sh "mvn clean install "
             }
         }
         }
         stage('Verify ') {
             steps {
             script {
-                sh "cd ${WORKSPACE}/jenkins-pipeline2 "
-                sh "ls -lhrt jenkins-pipeline2 "
+                sh "cd ${WORKSPACE} "
+                sh "ls -lhrt"
             }
         }
         }        
