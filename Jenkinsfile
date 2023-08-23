@@ -6,7 +6,11 @@ pipeline {
         stage("CI/CD: Warm Up"){
             steps {
                 script {
-                    sh "java -version"
+                    sh '''
+		     java -version
+                     echo "PATH = ${PATH}"
+		     echo "MAVEN_HOME = ${MAVEN_HOME}"
+		    '''
                 }
             }
         }
