@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+       environment {
+        MAVEN_HOME = '/opt/maven'
+        PATH = "${MAVEN_HOME}/bin:${PATH}"
+    }
     stages {
     
         stage("CI/CD: Warm Up"){
@@ -8,7 +11,6 @@ pipeline {
                 script {
                     sh '''
 		     java -version
-                     export MAVEN_HOME=/opt/maven && export PATH=$PATH:$MAVEN_HOME/bin
 		    '''
                 }
             }
