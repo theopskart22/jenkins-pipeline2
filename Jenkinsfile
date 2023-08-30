@@ -28,7 +28,8 @@ pipeline {
             steps {
             script {
                 sh "cd ${WORKSPACE}/target"
-                sh "mv gs-spring-boot-docker-0.1.0.jar build-${BUILD_NUMBER}.jar"
+		sh " ls -lhrt"
+                sh "mv *.jar build-${BUILD_NUMBER}.jar"
 		sh "curl -v -u admin:admin --upload-file build-${BUILD_NUMBER}.jar https://nexus.techmartguru.com/repository/build/v1.0/build-${BUILD_NUMBER}.jar"
             }
         }
